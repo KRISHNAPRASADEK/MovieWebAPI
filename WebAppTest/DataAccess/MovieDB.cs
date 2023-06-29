@@ -24,7 +24,6 @@ namespace WebAppTest.DataAccess
 
                 while (getAMovieDataReader.Read())
                 {
-                    
                     movie.Title = getAMovieDataReader.GetString(1);
                     movie.Year = getAMovieDataReader.GetInt32(2);
                     movie.Language = getAMovieDataReader.GetString(3);
@@ -50,6 +49,7 @@ namespace WebAppTest.DataAccess
                 while (getMovieListDataReader.Read())
                 {
                     Movie movie = new Movie();
+
                     movie.Title = getMovieListDataReader.GetString(1);
                     movie.Year = getMovieListDataReader.GetInt32(2);
                     movie.Language = getMovieListDataReader.GetString(3);
