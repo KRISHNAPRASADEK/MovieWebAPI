@@ -23,7 +23,7 @@ namespace WebAppTest.Controllers
         [HttpGet]
         public ActionResult Get(int id)
         {
-            Actor actor = new Actor();
+            Actor actor;
 
             try
             {
@@ -37,7 +37,7 @@ namespace WebAppTest.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult GetActors()
+        public ActionResult GetAll()
         {
             List<Actor> actors = new List<Actor>();
 
@@ -54,7 +54,7 @@ namespace WebAppTest.Controllers
 
 
         [HttpPost]
-        public ActionResult AddActorData(Actor actor)
+        public ActionResult Add(Actor actor)
 
         {
             try
@@ -80,7 +80,7 @@ namespace WebAppTest.Controllers
         }
 
         [HttpPut]
-        public ActionResult UpdateActorData(int id, Actor actor)
+        public ActionResult Update(int id, Actor actor)
 
         {
             try

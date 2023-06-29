@@ -22,7 +22,7 @@ namespace WebAppTest.Controllers
         [HttpGet]
         public ActionResult Get(int id)
         {
-            Movie movie = new Movie();
+            Movie movie;
 
             try
             {
@@ -36,7 +36,7 @@ namespace WebAppTest.Controllers
         }
 
         [HttpGet("GetAll")]
-        public ActionResult GetMovies()
+        public ActionResult GetAll()
         {
             List<Movie> movies = new List<Movie>();
 
@@ -53,7 +53,7 @@ namespace WebAppTest.Controllers
 
 
         [HttpPost]
-        public ActionResult AddMovieData(Movie movie)
+        public ActionResult Add(Movie movie)
 
         {
             try
@@ -79,7 +79,7 @@ namespace WebAppTest.Controllers
         }
 
         [HttpPut]
-        public ActionResult UpdateMovieData(int id,Movie movie)
+        public ActionResult Update(int id,Movie movie)
 
         {
             try
@@ -105,7 +105,7 @@ namespace WebAppTest.Controllers
         }
 
         [HttpDelete]
-        public ActionResult DeleteMovieData(int id)
+        public ActionResult Delete(int id)
 
         {
             try
