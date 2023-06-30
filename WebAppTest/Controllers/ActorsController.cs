@@ -10,6 +10,7 @@ namespace WebAppTest.Controllers
     [Route("[controller]")]
     public class ActorsController : ControllerBase
     {
+        private IConfiguration _configuration;
         private ActorsDB _actorsDataBase;
 
         public ActorsController(IConfiguration configuration)
@@ -17,17 +18,15 @@ namespace WebAppTest.Controllers
             _configuration = configuration;
             _actorsDataBase = new ActorsDB(_configuration.GetConnectionString("myDb1"));
         }
-        public IConfiguration _configuration { get; }
-
-
+        
         [HttpGet]
-        public ActionResult Get(int id)
+        public ActionResult GetById(int id)
         {
             Actor actor;
 
             try
             {
-                actor = _actorsDataBase.Get(id);
+                actor = _actorsDataBase.GetById(id);
                 return Ok(actor);
             }
             catch

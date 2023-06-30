@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using WebAppTest.Model;
 namespace WebAppTest.DataAccess
 {
-    public class MovieDB:ControllerBase
+    public class MovieDB
     {
         private string _connectionString;
 
@@ -12,7 +12,7 @@ namespace WebAppTest.DataAccess
             _connectionString = connectionString;
         }
 
-        public Movie Get(int id)
+        public Movie GetById(int id)
         {
             Movie movie = new Movie();
 

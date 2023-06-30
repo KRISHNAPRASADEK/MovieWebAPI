@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using WebAppTest.Model;
 namespace WebAppTest.DataAccess
 {
-    public class ActorsDB : ControllerBase
+    public class ActorsDB
     {
         private string _connectionString;
 
@@ -12,7 +12,7 @@ namespace WebAppTest.DataAccess
             _connectionString = connectionString;
         }
 
-        public Actor Get(int id)
+        public Actor GetById(int id)
         {
             Actor actor = new Actor();
 

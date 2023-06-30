@@ -10,23 +10,22 @@ namespace WebAppTest.Controllers
     [Route("[controller]")]
     public class MovieController : ControllerBase
     {
+        public IConfiguration _configuration;
         private MovieDB _movieDataBase;
 
         public MovieController(IConfiguration configuration) {
             _configuration = configuration;
             _movieDataBase= new MovieDB(_configuration.GetConnectionString("myDb1"));
         }
-        public IConfiguration _configuration { get; }
-
 
         [HttpGet]
-        public ActionResult Get(int id)
+        public ActionResult GetById(int id)
         {
             Movie movie;
 
             try
             {
-                movie = _movieDataBase.Get(id);
+                movie = _movieDataBase.GetById(id);
                 return Ok(movie);
             }
             catch
